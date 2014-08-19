@@ -9,7 +9,7 @@
 #import "timeLineViewController.h"
 #import "STTwitterAPI.h"
 
-@interface timeLineViewController ()
+@interface timeLineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) STTwitterAPI *twitter;
 
