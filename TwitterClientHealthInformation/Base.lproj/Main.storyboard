@@ -52,11 +52,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetcell" rowHeight="107" id="uag-Ts-d2g">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tweetcell" rowHeight="107" id="uag-Ts-d2g">
                                         <rect key="frame" x="0.0" y="86" width="320" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uag-Ts-d2g" id="b9o-Hq-Zp5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUF-FG-jTC">
@@ -67,15 +67,20 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gkq-zg-Wjt" kind="push" id="c4G-qi-R6f"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Oii-s4-CfB" id="ghE-1d-7ys"/>
+                                    <outlet property="delegate" destination="Oii-s4-CfB" id="sOt-ri-gfm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="タイムライン" id="aEL-M4-ztT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="AG9-zH-DTw"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="タイムライン" id="aEL-M4-ztT"/>
                     <connections>
                         <outlet property="tableView" destination="Mop-0U-AlG" id="iQx-4r-wRq"/>
                     </connections>
@@ -83,6 +88,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sru-LX-vMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039" y="46"/>
+        </scene>
+        <!--Article Text View Controller - 記事一覧-->
+        <scene sceneID="RyB-4T-4jj">
+            <objects>
+                <viewController id="gkq-zg-Wjt" customClass="ArticleTextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2bL-QK-m1j"/>
+                        <viewControllerLayoutGuide type="bottom" id="c4L-4Q-0o9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U8t-Io-112">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n7X-iD-Dfb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="nanapiArticleCell" rowHeight="110" id="hbf-EI-GuN">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbf-EI-GuN" id="ZjO-qI-Jt3">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="109"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-eQ-Mn4">
+                                                    <rect key="frame" x="12" y="17" width="58" height="72"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="nanapiArticleTextView" translatesAutoresizingMaskIntoConstraints="NO" id="a3T-Zz-83f">
+                                                    <rect key="frame" x="90" y="17" width="210" height="78"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gkq-zg-Wjt" id="XCP-fQ-fvg"/>
+                                    <outlet property="delegate" destination="gkq-zg-Wjt" id="mj4-KS-uqw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="記事一覧" id="7ye-iM-Xb2"/>
+                    <connections>
+                        <segue destination="vIY-zu-dE4" kind="push" identifier="toArticleTextViewController" id="4TE-Fn-bvy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tx3-yZ-sbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="46"/>
+        </scene>
+        <!--View Controller - nanapi-->
+        <scene sceneID="AB9-Sg-RBQ">
+            <objects>
+                <viewController id="vIY-zu-dE4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bed-Sw-rIS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fi6-ZD-JEI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pW6-Lz-vJi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8n7-oj-bq9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="nanapi" id="AKK-hx-ZIH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OI1-Af-PfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827" y="46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILs-8S-a9E">

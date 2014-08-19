@@ -41,36 +41,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
 	// Do any additional setup after loading the view, typically from a nib.
     self.twitter = [STTwitterAPI twitterAPIWithOAuthConsumerName:kConsumerName
                                                      consumerKey:kConsumerKey
                                                   consumerSecret:kConsumerKeySecret];
     [self.twitter postReverseOAuthTokenRequest:^(NSString *authenticationHeader) {
         self.twitter = [STTwitterAPI twitterAPIOSWithFirstAccount];
-        [self.twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
-            [self.twitter postReverseAuthAccessTokenWithAuthenticationHeader:authenticationHeader
-                                                                successBlock:^(NSString *oAuthToken,
-                                                                               NSString *oAuthTokenSecret,
-                                                                               NSString *userID,
-                                                                               NSString *screenName) {
-                                                                    self.accessToken = oAuthToken;
-                                                                    self.accessTokenSecret = oAuthTokenSecret;
-                                                                    NSLog(@"Token %@ secret %@",oAuthToken,oAuthTokenSecret);
-                                                                    
-                                                                } errorBlock:^(NSError *error) {
-                                                                    NSLog(@"error %@",[error description]);
-                                                                    
-                                                                }];
-        } errorBlock:^(NSError *error) {
-            NSLog(@"error %@",[error description]);
-        }];
     } errorBlock:^(NSError *error) {
         NSLog(@"error %@",[error description]);
     }];
+    
     //検索クエリの取得
-    [self.twitter getSearchTweetsWithQuery:@"かぜ"
+    [self.twitter getSearchTweetsWithQuery:@"風邪 && 咳"
                               successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
-                                  NSLog(@"%@ %@", searchMetadata, statuses);
+                                  self.twitterFeed = [[NSMutableArray alloc] initWithArray:statuses];
+                                  [self.tableView reloadData];
                               } errorBlock:^(NSError *error) {
                                   NSLog(@"%@", error);
                               }];
@@ -80,7 +68,9 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+
 }
+
 
 #pragma mark Table View Methods
 

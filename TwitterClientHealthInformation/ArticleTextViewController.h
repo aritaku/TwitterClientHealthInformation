@@ -1,5 +1,5 @@
 //
-//  timeLineViewController.h
+//  ArticleTextViewController.h
 //  TwitterClientHealthInformation
 //
 //  Created by 有村 琢磨 on 2014/08/19.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArticleTextViewController.h"
 
-@interface timeLineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ArticleTextViewController : UIViewController
 
 @end
