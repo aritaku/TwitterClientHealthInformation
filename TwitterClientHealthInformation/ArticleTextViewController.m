@@ -87,16 +87,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
     UIPageViewController *controller2 = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
     //タップを感知して記事URLを取得
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
     
-    [self.  addGestureRecognizer:singleTapGestureRecognizer];
+    [self.view  addGestureRecognizer:singleTapGestureRecognizer];
     
     //記事URLをnanapiViewControllerに渡す
-    controller2.articleUrl =
+    controller2.articleUrl = 
     
     [self.navigationController pushViewController:controller2 animated:YES];
+     */
 }
 
 @end

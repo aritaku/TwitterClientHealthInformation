@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-dg-WTv">
@@ -44,11 +44,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zfP-Mb-KpW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bvn-f6-oTp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mop-0U-AlG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -96,11 +96,11 @@
                         <viewControllerLayoutGuide type="bottom" id="c4L-4Q-0o9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U8t-Io-112">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n7X-iD-Dfb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -148,11 +148,56 @@
                         <viewControllerLayoutGuide type="bottom" id="Fi6-ZD-JEI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pW6-Lz-vJi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fww-hi-m20">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" style="plain" id="opP-BC-IXt"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4ti-BH-xnS"/>
+                                    <barButtonItem title="Item" systemItem="refresh" id="x1z-YE-v8o"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="o5U-sp-X6L"/>
+                                    <barButtonItem systemItem="action" id="ys3-pE-2Ll">
+                                        <connections>
+                                            <action selector="actionButtonDidPush:" destination="vIY-zu-dE4" id="cTl-6b-ZFK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Id-GZ-ATC">
+                                <rect key="frame" x="6" y="74" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3K-FL-dJP">
+                                <rect key="frame" x="0.0" y="103" width="320" height="421"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rkc-nT-1XH">
+                                <rect key="frame" x="-6" y="64" width="332" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="nanapi" id="AKK-hx-ZIH"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="actionButtonItem" destination="fww-hi-m20" id="97I-OC-kQr"/>
+                        <outlet property="actionButtonitem" destination="fww-hi-m20" id="K0b-KA-51e"/>
+                        <outlet property="backButtonItem" destination="fww-hi-m20" id="JHf-SW-3Ai"/>
+                        <outlet property="progressView" destination="pW6-Lz-vJi" id="Lcl-j3-AiL"/>
+                        <outlet property="refreshButtonItem" destination="fww-hi-m20" id="ljJ-BC-lCM"/>
+                        <outlet property="refreshButtonitem" destination="fww-hi-m20" id="Uar-KU-aCP"/>
+                        <outlet property="titleLabel" destination="0Id-GZ-ATC" id="onM-jz-jMT"/>
+                        <outlet property="toolBar" destination="fww-hi-m20" id="D4y-lo-7OY"/>
+                        <outlet property="webView" destination="G3K-FL-dJP" id="DoM-ga-aJ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OI1-Af-PfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,6 +225,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

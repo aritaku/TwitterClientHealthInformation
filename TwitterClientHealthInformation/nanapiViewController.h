@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface nanapiViewController : UIViewController
+@interface nanapiViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButtonitem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+
+@property (strong, nonatomic) UIPageViewController *articleURL;
+
+- (IBAction)actionButtonDidPush:(id)sender;
+
 
 @end
