@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArticleTextViewController.h"
+#import "ArticlesViewController.h"
 
 @interface timeLineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

@@ -8,7 +8,7 @@
 
 #import "timeLineViewController.h"
 #import "STTwitterAPI.h"
-#import "ArticleTextViewController.h"
+#import "ArticlesViewController.h"
 #import "ArticlesViewController.h"
 
 @interface timeLineViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
 
-@property (strong, nonatomic) ArticleTextViewController *query;
+@property (strong, nonatomic) ArticlesViewController *query;
 
 @end
 

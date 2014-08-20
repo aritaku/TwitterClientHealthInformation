@@ -25,7 +25,6 @@
 		9A1A299E19A1E7BB0090E892 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A299D19A1E7BB0090E892 /* Accounts.framework */; };
 		9A1A29A019A1F3030090E892 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A299F19A1F3030090E892 /* Twitter.framework */; };
 		9A1A29A619A2F1C40090E892 /* timeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A29A519A2F1C40090E892 /* timeLineViewController.m */; };
-		9A1A29A919A32A3A0090E892 /* ArticleTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A29A819A32A3A0090E892 /* ArticleTextViewController.m */; };
 		9A8AEBD119A474820053D4C2 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */; };
 		9AE194C219A4404700975528 /* nanapiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE194C119A4404700975528 /* nanapiViewController.m */; };
 		CA56200CD3FD446DA85D6D63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 803744FAA76D4B978485FEC0 /* libPods.a */; };
@@ -67,8 +66,6 @@
 		9A1A299F19A1F3030090E892 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9A1A29A419A2F1C40090E892 /* timeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeLineViewController.h; sourceTree = "<group>"; };
 		9A1A29A519A2F1C40090E892 /* timeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeLineViewController.m; sourceTree = "<group>"; };
-		9A1A29A719A32A3A0090E892 /* ArticleTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTextViewController.h; sourceTree = "<group>"; };
-		9A1A29A819A32A3A0090E892 /* ArticleTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTextViewController.m; sourceTree = "<group>"; };
 		9A8AEBCF19A474820053D4C2 /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
 		9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
 		9AE194C019A4404700975528 /* nanapiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanapiViewController.h; sourceTree = "<group>"; };
@@ -151,8 +148,6 @@
 				9A1A29A519A2F1C40090E892 /* timeLineViewController.m */,
 				9A8AEBCF19A474820053D4C2 /* ArticlesViewController.h */,
 				9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */,
-				9A1A29A719A32A3A0090E892 /* ArticleTextViewController.h */,
-				9A1A29A819A32A3A0090E892 /* ArticleTextViewController.m */,
 				9AE194C019A4404700975528 /* nanapiViewController.h */,
 				9AE194C119A4404700975528 /* nanapiViewController.m */,
 				9A1A296F19A1DC950090E892 /* Images.xcassets */,
@@ -328,7 +323,6 @@
 				9A8AEBD119A474820053D4C2 /* ArticlesViewController.m in Sources */,
 				9A1A298E19A1DCB50090E892 /* SyndromeViewController.m in Sources */,
 				9A1A296419A1DC950090E892 /* main.m in Sources */,
-				9A1A29A919A32A3A0090E892 /* ArticleTextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
