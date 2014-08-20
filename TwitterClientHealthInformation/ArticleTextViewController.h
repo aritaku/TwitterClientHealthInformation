@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArticleTextViewController : UIViewController
+@interface ArticleTextViewController : UITableViewController
+
+@property (strong, nonatomic) NSString *query;
 
 @end
