@@ -11,4 +11,6 @@
 
 @interface timeLineViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) timeLineViewController *query;
+
 @end

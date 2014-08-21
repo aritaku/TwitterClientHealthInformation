@@ -74,6 +74,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     timeLineViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"timeLineViewController"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
     controller.query = cell.textLabel.text;
     [self.navigationController pushViewController:controller animated:YES];
 }
