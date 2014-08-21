@@ -7,7 +7,7 @@
         <!--Syndrome View Controller - 風邪の症状を選ぶ-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SyndromeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SyndromeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="SyndromeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -30,6 +30,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="6r9-7t-MRk"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="vp6-MM-Zfj"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -46,7 +50,7 @@
         <!--Time Line View Controller - タイムライン-->
         <scene sceneID="j5G-k2-j8n">
             <objects>
-                <viewController id="Oii-s4-CfB" customClass="timeLineViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeLineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oii-s4-CfB" customClass="timeLineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5cB-mJ-y47"/>
                         <viewControllerLayoutGuide type="bottom" id="zfP-Mb-KpW"/>

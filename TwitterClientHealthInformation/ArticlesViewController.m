@@ -82,7 +82,7 @@
     [[UIApplication sharedApplication] openURL:url];
     
     /*
-     UIPageViewController *controller2 = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
+     UIPageViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
      //タップを感知して記事URLを取得
      UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
      

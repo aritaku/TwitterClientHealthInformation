@@ -7,11 +7,13 @@
 //
 
 #import "SyndromeViewController.h"
+#import "timeLineViewController.h"
 
-@interface SyndromeViewController ()
+@interface SyndromeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *syndroms;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) timeLineViewController *query;
 
 @end
 
@@ -64,18 +66,16 @@
                                         reuseIdentifier: @"cellid"];
     }
     NSInteger idx = indexPath.row;
-    NSDictionary *t = self.syndroms[idx];
     
-    cell.textLabel.text = t[@"text"];
-    
+    cell.textLabel.text = syndroms[idx];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     timeLineViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"timeLineViewController"];
-    controller.query =
+    controller.query = cell.textLabel.text;
+    [self.navigationController pushViewController:controller animated:YES];
 }
-
 
 @end
