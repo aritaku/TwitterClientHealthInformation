@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "timeLineViewController.h"
 
-@interface SyndromeViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SyndromeViewController : UIViewController
 
 @end
-

@@ -25,9 +25,7 @@
 		9A1A299E19A1E7BB0090E892 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A299D19A1E7BB0090E892 /* Accounts.framework */; };
 		9A1A29A019A1F3030090E892 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A299F19A1F3030090E892 /* Twitter.framework */; };
 		9A1A29A619A2F1C40090E892 /* timeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A29A519A2F1C40090E892 /* timeLineViewController.m */; };
-		9A8AEBD119A474820053D4C2 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */; };
-		9A8AEBD519A481B20053D4C2 /* N866_masukuwosurudansei500.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A8AEBD419A481B20053D4C2 /* N866_masukuwosurudansei500.jpg */; };
-		9AE194C219A4404700975528 /* nanapiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE194C119A4404700975528 /* nanapiViewController.m */; };
+		9A1A29A919A32A3A0090E892 /* ArticleTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A29A819A32A3A0090E892 /* ArticleTextViewController.m */; };
 		CA56200CD3FD446DA85D6D63 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 803744FAA76D4B978485FEC0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,11 +65,8 @@
 		9A1A299F19A1F3030090E892 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9A1A29A419A2F1C40090E892 /* timeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeLineViewController.h; sourceTree = "<group>"; };
 		9A1A29A519A2F1C40090E892 /* timeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeLineViewController.m; sourceTree = "<group>"; };
-		9A8AEBCF19A474820053D4C2 /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
-		9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
-		9A8AEBD419A481B20053D4C2 /* N866_masukuwosurudansei500.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = N866_masukuwosurudansei500.jpg; path = ../../N866_masukuwosurudansei500.jpg; sourceTree = "<group>"; };
-		9AE194C019A4404700975528 /* nanapiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanapiViewController.h; sourceTree = "<group>"; };
-		9AE194C119A4404700975528 /* nanapiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nanapiViewController.m; sourceTree = "<group>"; };
+		9A1A29A719A32A3A0090E892 /* ArticleTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTextViewController.h; sourceTree = "<group>"; };
+		9A1A29A819A32A3A0090E892 /* ArticleTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTextViewController.m; sourceTree = "<group>"; };
 		A9AC7B20D5604186ACBCD043 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,10 +143,8 @@
 				9A1A298D19A1DCB50090E892 /* SyndromeViewController.m */,
 				9A1A29A419A2F1C40090E892 /* timeLineViewController.h */,
 				9A1A29A519A2F1C40090E892 /* timeLineViewController.m */,
-				9A8AEBCF19A474820053D4C2 /* ArticlesViewController.h */,
-				9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */,
-				9AE194C019A4404700975528 /* nanapiViewController.h */,
-				9AE194C119A4404700975528 /* nanapiViewController.m */,
+				9A1A29A719A32A3A0090E892 /* ArticleTextViewController.h */,
+				9A1A29A819A32A3A0090E892 /* ArticleTextViewController.m */,
 				9A1A296F19A1DC950090E892 /* Images.xcassets */,
 				9A1A295E19A1DC950090E892 /* Supporting Files */,
 			);
@@ -161,7 +154,6 @@
 		9A1A295E19A1DC950090E892 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A8AEBD419A481B20053D4C2 /* N866_masukuwosurudansei500.jpg */,
 				9A1A295F19A1DC950090E892 /* TwitterClientHealthInformation-Info.plist */,
 				9A1A296019A1DC950090E892 /* InfoPlist.strings */,
 				9A1A296319A1DC950090E892 /* main.m */,
@@ -268,7 +260,6 @@
 			files = (
 				9A1A297019A1DC950090E892 /* Images.xcassets in Resources */,
 				9A1A296219A1DC950090E892 /* InfoPlist.strings in Resources */,
-				9A8AEBD519A481B20053D4C2 /* N866_masukuwosurudansei500.jpg in Resources */,
 				9A1A296B19A1DC950090E892 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,11 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A1A296819A1DC950090E892 /* AppDelegate.m in Sources */,
-				9AE194C219A4404700975528 /* nanapiViewController.m in Sources */,
 				9A1A29A619A2F1C40090E892 /* timeLineViewController.m in Sources */,
-				9A8AEBD119A474820053D4C2 /* ArticlesViewController.m in Sources */,
 				9A1A298E19A1DCB50090E892 /* SyndromeViewController.m in Sources */,
 				9A1A296419A1DC950090E892 /* main.m in Sources */,
+				9A1A29A919A32A3A0090E892 /* ArticleTextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
