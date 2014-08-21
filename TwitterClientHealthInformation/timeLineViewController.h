@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArticleTextViewController.h"
+#import "ArticlesViewController.h"
 
-@interface timeLineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface timeLineViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) timeLineViewController *query;
 
 @end
