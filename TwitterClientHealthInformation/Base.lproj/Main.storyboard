@@ -91,20 +91,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ib0-zZ-bYC">
-                                <rect key="frame" x="0.0" y="262" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Back" style="plain" id="Y0H-v6-BWd">
-                                        <connections>
-                                            <action selector="actionButtonDidPush:" destination="hcY-KQ-Uo4" id="OmU-WI-zn7"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Back" style="plain" id="Y0H-v6-BWd"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="CLk-0K-5qr"/>
-                                    <barButtonItem title="Item" systemItem="refresh" id="3iO-ws-KLn">
-                                        <connections>
-                                            <action selector="actionButtonDidPush:" destination="hcY-KQ-Uo4" id="zIs-dT-0fq"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Item" systemItem="refresh" id="3iO-ws-KLn"/>
                                     <barButtonItem systemItem="flexibleSpace" id="WmW-Ig-lWF"/>
                                     <barButtonItem systemItem="action" id="9BT-Dm-b24">
                                         <connections>
@@ -114,7 +106,7 @@
                                 </items>
                             </toolbar>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CJB-l7-WoA">
-                                <rect key="frame" x="-6" y="283" width="332" height="2"/>
+                                <rect key="frame" x="-6" y="103" width="332" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-dO-8P8">
@@ -124,7 +116,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-bS-xh6">
-                                <rect key="frame" x="0.0" y="74" width="320" height="421"/>
+                                <rect key="frame" x="0.0" y="67" width="320" height="457"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -179,10 +171,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-Vs-f3t">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="characterWrap" numberOfLines="0" minimumScaleFactor="0.5" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="SFv-Ph-kn8">
                                             <rect key="frame" x="52" y="0.0" width="248" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -193,7 +181,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="iconImage" destination="hgF-Vs-f3t" id="2Qx-Fm-v7E"/>
                                     <outlet property="syndromeLabel" destination="SFv-Ph-kn8" id="saw-ec-XQI"/>
                                 </connections>
                             </tableViewCell>

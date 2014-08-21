@@ -26,7 +26,8 @@
     [super viewDidLoad];
     
     self.syndroms =[[NSArray alloc] initWithObjects:@"咳",@"鼻水",@"のど",@"頭痛",@"高熱",@"寒気", nil];
-    self.syndromImages =[[NSArray alloc] initWithObjects:
+    /*
+     self.syndromImages =[[NSArray alloc] initWithObjects:
                          @"kaze.gif",
                          @"kaze.gif",
                          @"kaze.gif",
@@ -34,6 +35,7 @@
                          @"kaze.gif",
                          @"kaze.gif",
                          nil];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +60,7 @@
 {
     SyndromeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SyndromeCell" forIndexPath:indexPath];
     cell.syndromeLabel.text = [self.syndroms objectAtIndex:indexPath.row];
-    [cell.iconImage setImage:[UIImage imageNamed:[self.syndromImages objectAtIndex:indexPath.row]]];
+    //[cell.iconImage setImage:[UIImage imageNamed:[self.syndromImages objectAtIndex:indexPath.row]]];
     
     return cell;
 }

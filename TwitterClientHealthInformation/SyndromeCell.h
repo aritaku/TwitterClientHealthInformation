@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SyndromeCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
+//@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
 
 @property (strong, nonatomic) IBOutlet UILabel *syndromeLabel;
 @end
