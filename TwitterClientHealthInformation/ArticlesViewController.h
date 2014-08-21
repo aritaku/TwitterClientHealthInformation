@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArticlesViewController : UITableViewController
+@interface ArticlesViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSString *query;
 

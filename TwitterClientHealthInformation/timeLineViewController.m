@@ -49,8 +49,7 @@
     
     //検索クエリの取得
     //あとで動的にする
-    NSString *str = _query;
-    [self.twitter getSearchTweetsWithQuery:@"風邪 && 咳"
+    [self.twitter getSearchTweetsWithQuery:self.tweetquery
                               successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
                                   self.twitterFeed = [[NSMutableArray alloc] initWithArray:statuses];
                                   [self.tableView reloadData];

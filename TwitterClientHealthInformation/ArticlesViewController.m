@@ -15,7 +15,7 @@
 
 @end
 
-#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4cb94f0895324&format=json&top_theme_id=614&query="
+#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4cb94f0895324&format=json&top_theme_id=614"
 
 
 @implementation ArticlesViewController
@@ -34,7 +34,9 @@
 
 - (void) getJson
 {
-    NSURL *url = [NSURL URLWithString:@"%@%@": NANAPI_API_URL, _query];
+    NSString *path = [NSString stringWithFormat:@"%@&query=%@", NANAPI_API_URL, self.query];
+    NSString* escaped = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:escaped];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError){

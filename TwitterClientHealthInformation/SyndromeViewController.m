@@ -12,8 +12,6 @@
 @interface SyndromeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *syndroms;
-@property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (strong, nonatomic) timeLineViewController *query;
 
 @end
 
@@ -74,8 +72,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     timeLineViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"timeLineViewController"];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
-    controller.query = cell.textLabel.text;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
+    controller.tweetquery = cell.textLabel.text;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
