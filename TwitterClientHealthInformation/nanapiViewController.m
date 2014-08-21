@@ -20,17 +20,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // 予め認証に使用する資格情報を作成
-    NSURLCredential *credential = [NSURLCredential credentialWithUser:@"demouser" password:@"password" persistence:NSURLCredentialPersistenceForSession];
-    // 認証の必要な場所の情報を作成
-    NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc] initWithHost:@"www.kackun.com" port:80 protocol:NSURLProtectionSpaceHTTP realm:@"Basic Authentication Demo" authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
-    // 共有資格情報ストレージに資格情報と場所の情報を格納
-    [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:protectionSpace];
-    
-    // URL文字列からURLオブジェクトを作成する。
-    NSURL *targetURL = [NSURL URLWithString:@"http://www.kackun.com/iosrecipedemo/index.html"];
+
     // URLから、URLリクエストを作成する。
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:targetURL];
+    NSURL *url = [NSURL URLWithString:self.articleURL];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+
     // WebViewに開きたいURLを設定する
     [self.webView loadRequest:urlRequest];
 }

@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
-@property (strong, nonatomic) UIPageViewController *articleURL;
+@property (strong, nonatomic) NSString *articleURL;
 
 - (IBAction)actionButtonDidPush:(id)sender;
 

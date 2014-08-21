@@ -11,6 +11,6 @@
 
 @interface timeLineViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) timeLineViewController *query;
+@property (strong, nonatomic) NSString *tweetquery;
 
 @end

@@ -15,7 +15,7 @@
 
 @end
 
-#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4cb94f0895324&format=json&top_theme_id=614&query="
+#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4cb94f0895324&format=json&top_theme_id=614"
 
 
 @implementation ArticlesViewController
@@ -34,7 +34,9 @@
 
 - (void) getJson
 {
-    NSURL *url = [NSURL URLWithString:@"%@%@": NANAPI_API_URL, _query];
+    NSString *path = [NSString stringWithFormat:@"%@&query=%@", NANAPI_API_URL, [NSString stringWithFormat:@"風邪 %@", self.query]];
+    NSString* escaped = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:escaped];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError){
@@ -78,21 +80,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *path = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"url"];
-    NSURL *url = [NSURL URLWithString:path];
-    [[UIApplication sharedApplication] openURL:url];
+//    NSURL *url = [NSURL URLWithString:path];
+//    [[UIApplication sharedApplication] openURL:url];
     
-    /*
-     UIPageViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
-     //タップを感知して記事URLを取得
-     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
-     
-     [self.view  addGestureRecognizer:singleTapGestureRecognizer];
-     
+     nanapiViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
+          
      //記事URLをnanapiViewControllerに渡す
-     controller.articleUrl =path;
-     
-     [self.navigationController pushViewController:controller2 animated:YES];
-     */
+    controller.articleURL = path;
+    
+    [self.navigationController pushViewController:controller animated:YES];
 
 }
 

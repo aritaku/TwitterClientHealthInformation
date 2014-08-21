@@ -13,14 +13,11 @@
 @interface timeLineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) STTwitterAPI *twitter;
-
 @property (strong, nonatomic) NSString *accessToken;
 @property (strong, nonatomic) NSString *accessTokenSecret;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
-
-@property (strong, nonatomic) ArticlesViewController *query;
+@property (strong, nonatomic) NSArray *syndroms;
 
 @end
 
@@ -35,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    self.title = @"ツイート";
+    
 //    self.tableView.delegate = self;
 //    self.tableView.dataSource = self;
 	// Do any additional setup after loading the view, typically from a nib.
@@ -48,9 +47,7 @@
     }];
     
     //検索クエリの取得
-    //あとで動的にする
-    NSString *str = _query;
-    [self.twitter getSearchTweetsWithQuery:@"風邪 && 咳"
+    [self.twitter getSearchTweetsWithQuery:[NSString stringWithFormat:@"風邪 AND %@", self.tweetquery]
                               successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
                                   self.twitterFeed = [[NSMutableArray alloc] initWithArray:statuses];
                                   [self.tableView reloadData];
@@ -91,23 +88,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ArticlesViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesViewController"];
-    controller.query = @"咳";
+    controller.query = self.tweetquery;
     [self.navigationController pushViewController:controller animated:YES];
-//    //タップを感知してツイート本文を取得
-//    //TODO: 最終的に動的にnanapiAPIのqueryに渡すワードを生成する
-////   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetcell" forIndexPath:indexPath];
-//
-//    //ツイート本文よりキーワードを取得
-////    NSString *tweetMessage = cell.textLabel.text;
-//    NSString *queryWord = @"咳";
-//    ArticleTextViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticleTextViewController"];
-//    
-//    //キーワードをArtileTextViewControlerに渡す
-//    controller.query = queryWord;
-//
-//    // 実際に画面遷移を命令している部分（アニメーション付きで）
-//    [self.navigationController pushViewController:controller animated:YES];
-//    
 }
 
 
