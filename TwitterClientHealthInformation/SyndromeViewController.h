@@ -11,5 +11,7 @@
 
 @interface SyndromeViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) NSString *tweetquery;
+
 @end
 

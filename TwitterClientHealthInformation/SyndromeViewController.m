@@ -15,23 +15,13 @@
 
 @end
 
-@implementation SyndromeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
+@implementation SyndromeViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,12 +34,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 1.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 6.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,7 +48,7 @@
     NSArray *syndroms =[[NSArray alloc] initWithObjects:@"咳",@"鼻水",@"のど",@"頭痛",@"高熱",@"寒気", nil];
     
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                         reuseIdentifier: @"cellid"];
@@ -73,6 +63,7 @@
 {
     timeLineViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"timeLineViewController"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
+    //controller.tweetquery
     controller.tweetquery = cell.textLabel.text;
     [self.navigationController pushViewController:controller animated:YES];
 }

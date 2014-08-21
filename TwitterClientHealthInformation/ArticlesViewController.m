@@ -85,15 +85,11 @@
     
     /*
      UIPageViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
-     //タップを感知して記事URLを取得
-     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
-     
-     [self.view  addGestureRecognizer:singleTapGestureRecognizer];
-     
+          
      //記事URLをnanapiViewControllerに渡す
      controller.articleUrl =path;
      
-     [self.navigationController pushViewController:controller2 animated:YES];
+     [self.navigationController pushViewController:controller animated:YES];
      */
 
 }

@@ -13,14 +13,12 @@
 @interface timeLineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) STTwitterAPI *twitter;
-
 @property (strong, nonatomic) NSString *accessToken;
 @property (strong, nonatomic) NSString *accessTokenSecret;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *twitterFeed;
-
-@property (strong, nonatomic) ArticlesViewController *query;
+//@property (strong, nonatomic) NSString *query;
+@property (strong, nonatomic) NSArray *syndroms;
 
 @end
 
@@ -49,6 +47,7 @@
     
     //検索クエリの取得
     //あとで動的にする
+
     [self.twitter getSearchTweetsWithQuery:self.tweetquery
                               successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
                                   self.twitterFeed = [[NSMutableArray alloc] initWithArray:statuses];
@@ -89,24 +88,32 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    NSArray *syndroms =[[NSArray alloc] initWithObjects:@"咳",@"鼻水",@"のど",@"頭痛",@"高熱",@"寒気", nil];
+    
     ArticlesViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesViewController"];
-    controller.query = @"咳";
+    
+    NSInteger *idx = indexPath.row;
+    controller.query = self.syndroms;
     [self.navigationController pushViewController:controller animated:YES];
-//    //タップを感知してツイート本文を取得
-//    //TODO: 最終的に動的にnanapiAPIのqueryに渡すワードを生成する
-////   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetcell" forIndexPath:indexPath];
-//
-//    //ツイート本文よりキーワードを取得
-////    NSString *tweetMessage = cell.textLabel.text;
-//    NSString *queryWord = @"咳";
-//    ArticleTextViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticleTextViewController"];
-//    
-//    //キーワードをArtileTextViewControlerに渡す
-//    controller.query = queryWord;
-//
-//    // 実際に画面遷移を命令している部分（アニメーション付きで）
-//    [self.navigationController pushViewController:controller animated:YES];
-//    
+    
+   /*
+   //タップを感知してツイート本文を取得
+   //TODO: 最終的に動的にnanapiAPIのqueryに渡すワードを生成する
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetcell" forIndexPath:indexPath];
+
+   //ツイート本文よりキーワードを取得
+    NSString *tweetMessage = cell.textLabel.text;
+    NSString *queryWord = @"風邪";
+    ArticlesViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticleTextViewController"];
+    
+    //キーワードをArtileTextViewControlerに渡す
+    controller.query = queryWord;
+
+    // 実際に画面遷移を命令している部分（アニメーション付きで）
+    [self.navigationController pushViewController:controller animated:YES];
+    */
 }
 
 
