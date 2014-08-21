@@ -34,7 +34,7 @@
 
 - (void) getJson
 {
-    NSString *path = [NSString stringWithFormat:@"%@&query=%@", NANAPI_API_URL, self.query];
+    NSString *path = [NSString stringWithFormat:@"%@&query=%@", NANAPI_API_URL, [NSString stringWithFormat:@"風邪 %@", self.query]];
     NSString* escaped = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:escaped];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -80,17 +80,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *path = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"url"];
-    NSURL *url = [NSURL URLWithString:path];
-    [[UIApplication sharedApplication] openURL:url];
+//    NSURL *url = [NSURL URLWithString:path];
+//    [[UIApplication sharedApplication] openURL:url];
     
-    /*
-     UIPageViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
+     nanapiViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"nanapiViewController"];
           
      //記事URLをnanapiViewControllerに渡す
-     controller.articleUrl =path;
-     
-     [self.navigationController pushViewController:controller animated:YES];
-     */
+    controller.articleURL = path;
+    
+    [self.navigationController pushViewController:controller animated:YES];
 
 }
 

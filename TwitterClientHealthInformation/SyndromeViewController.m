@@ -8,10 +8,12 @@
 
 #import "SyndromeViewController.h"
 #import "timeLineViewController.h"
+#import "SyndromeCell.h"
 
 @interface SyndromeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *syndroms;
+@property (strong, nonatomic) NSArray *syndromImages;
 
 @end
 
@@ -22,6 +24,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.syndroms =[[NSArray alloc] initWithObjects:@"咳",@"鼻水",@"のど",@"頭痛",@"高熱",@"寒気", nil];
+    self.syndromImages =[[NSArray alloc] initWithObjects:
+                         @"kaze.gif",
+                         @"kaze.gif",
+                         @"kaze.gif",
+                         @"kaze.gif",
+                         @"kaze.gif",
+                         @"kaze.gif",
+                         nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,27 +56,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    SyndromeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SyndromeCell" forIndexPath:indexPath];
+    cell.syndromeLabel.text = [self.syndroms objectAtIndex:indexPath.row];
+    [cell.iconImage setImage:[UIImage imageNamed:[self.syndromImages objectAtIndex:indexPath.row]]];
     
-    NSArray *syndroms =[[NSArray alloc] initWithObjects:@"咳",@"鼻水",@"のど",@"頭痛",@"高熱",@"寒気", nil];
-    
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                        reuseIdentifier: @"cellid"];
-    }
-    NSInteger idx = indexPath.row;
-    
-    cell.textLabel.text = syndroms[idx];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     timeLineViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"timeLineViewController"];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
-    //controller.tweetquery
-    controller.tweetquery = cell.textLabel.text;
+    NSString *syndrome = [self.syndroms objectAtIndex:indexPath.row];
+    controller.tweetquery = syndrome;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
