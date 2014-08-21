@@ -20,14 +20,6 @@
 
 @implementation ArticlesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -97,7 +89,7 @@
      [self.view  addGestureRecognizer:singleTapGestureRecognizer];
      
      //記事URLをnanapiViewControllerに渡す
-     controller2.articleUrl =
+     controller.articleUrl =path;
      
      [self.navigationController pushViewController:controller2 animated:YES];
      */

@@ -10,6 +10,9 @@
 
 @interface SyndromeViewController ()
 
+@property (strong, nonatomic) NSArray *syndroms;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+
 @end
 
 @implementation SyndromeViewController
@@ -26,7 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +40,42 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark table view method
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSArray *syndroms =[[NSArray alloc] initWithObjects:@"咳",@"鼻水",@"のど",@"頭痛",@"高熱",@"寒気", nil];
+    
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                        reuseIdentifier: @"cellid"];
+    }
+    NSInteger idx = indexPath.row;
+    NSDictionary *t = self.syndroms[idx];
+    
+    cell.textLabel.text = t[@"text"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    timeLineViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"timeLineViewController"];
+    controller.query =
+}
+
 
 @end
