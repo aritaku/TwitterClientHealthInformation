@@ -34,6 +34,17 @@
     
     self.title = @"ツイート";
     
+    [self twitterTimeline];
+}
+
+- (IBAction)refreshButton:(id)sender
+{
+    [self twitterTimeline];
+}
+
+- (void)twitterTimeline
+{
+    
 //    self.tableView.delegate = self;
 //    self.tableView.dataSource = self;
 	// Do any additional setup after loading the view, typically from a nib.
@@ -74,14 +85,28 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tweetcell];
     
+    UITextView *tweetTextView = (UITextView *)[cell viewWithTag:3];
+    UILabel *userLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *userIdLabel = (UILabel *)[cell viewWithTag:2];
+    UIImageView *userImageView = (UIImageView *)[cell viewWithTag:4];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tweetcell];
     }
     
     NSInteger idx = indexPath.row;
-    NSDictionary *t = self.twitterFeed[idx];
+    NSDictionary *tweet = self.twitterFeed[idx];
+    NSDictionary *userInfo = tweet[@"user"];
     
-    cell.textLabel.text = t[@"text"];
+    //cell.textLabel.text = tweet[@"text"];
+    tweetTextView.text = [NSString stringWithFormat:@"%@", tweet[@"text"]];
+    userLabel.text = [NSString stringWithFormat:@"%@", userInfo[@"name"]];
+    userIdLabel.text = [NSString stringWithFormat:@"%@", userInfo[@"screen_name"]];
+    
+    NSString *userImagePath = userInfo[@"profile_image_url"];
+    NSURL *userImagePathUrl = [[NSURL alloc] initWithString:userImagePath];
+    NSData *userImagePathData = [[NSData alloc] initWithContentsOfURL:userImagePathUrl];
+    userImageView.image = [[UIImage alloc] initWithData:userImagePathData];
     
     return cell;
 }

@@ -12,5 +12,6 @@
 @interface timeLineViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSString *tweetquery;
+-(IBAction)refreshButton:(id)sender;
 
 @end
