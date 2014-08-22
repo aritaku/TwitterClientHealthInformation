@@ -8,6 +8,7 @@
 
 #import "ArticlesViewController.h"
 #import "nanapiViewController.h"
+#import "ArticleCell.h"
 
 @interface ArticlesViewController ()
 
@@ -45,6 +46,7 @@
                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                            //リスト管理するプロパティに挿入
                                            self.nanapiList = [[dict objectForKey:@"response"] objectForKey:@"recipes"];
+                                           
                                            //データ取得後テーブルを再描画
                                            [self.tableView reloadData];
                                            
@@ -72,22 +74,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"articleCell" forIndexPath:indexPath];
+    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"articleCell" forIndexPath:indexPath];
     
-    UIImageView *articleImageView = (UIImageView *)[cell viewWithTag:1 ];
-    UITextView *articleTitleView = (UITextView *)[cell viewWithTag:2];
-    UITextView *articleDescription = (UITextView * )[cell viewWithTag:3];
+//    UIImageView *articleImageView = (UIImageView *)[cell viewWithTag:1 ];
+//    UITextView *articleTitleView = (UITextView *)[cell viewWithTag:2];
+//    UITextView *articleDescription = (UITextView * )[cell viewWithTag:3];
     
     NSString *title = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"title"];
-    NSString *description = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"description"];
+    NSString *description = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"body"];
     
     NSString *articleImagePath = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"image"];
     NSURL *articleImagePathUrl = [[NSURL alloc] initWithString:articleImagePath];
     NSData *articleImagePathData = [[NSData alloc] initWithContentsOfURL:articleImagePathUrl];
-    articleImageView.image = [[UIImage alloc] initWithData:articleImagePathData];
-    
-    articleTitleView.text = title;
-    articleDescription.text = description;
+    [cell.articleImageView setImage:[[UIImage alloc] initWithData:articleImagePathData]];
+    [cell.articleTitile setText:title];
+    [cell.articleDescription setText:description];
     
     return cell;
 }

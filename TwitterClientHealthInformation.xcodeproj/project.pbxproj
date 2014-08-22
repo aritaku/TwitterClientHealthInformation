@@ -25,6 +25,7 @@
 		9A1A299E19A1E7BB0090E892 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A299D19A1E7BB0090E892 /* Accounts.framework */; };
 		9A1A29A019A1F3030090E892 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A299F19A1F3030090E892 /* Twitter.framework */; };
 		9A1A29A619A2F1C40090E892 /* timeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A29A519A2F1C40090E892 /* timeLineViewController.m */; };
+		9A855CB219A70532000B97D1 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A855CB119A70532000B97D1 /* ArticleCell.m */; };
 		9A8AEBD119A474820053D4C2 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */; };
 		9A8AEC2219A5EA180053D4C2 /* SyndromeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8AEC2119A5EA180053D4C2 /* SyndromeCell.m */; };
 		9AE194C219A4404700975528 /* nanapiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE194C119A4404700975528 /* nanapiViewController.m */; };
@@ -67,6 +68,8 @@
 		9A1A299F19A1F3030090E892 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		9A1A29A419A2F1C40090E892 /* timeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeLineViewController.h; sourceTree = "<group>"; };
 		9A1A29A519A2F1C40090E892 /* timeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeLineViewController.m; sourceTree = "<group>"; };
+		9A855CB019A70532000B97D1 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		9A855CB119A70532000B97D1 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		9A8AEBCF19A474820053D4C2 /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
 		9A8AEBD019A474820053D4C2 /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
 		9A8AEBD419A481B20053D4C2 /* N866_masukuwosurudansei500.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = N866_masukuwosurudansei500.jpg; path = ../../N866_masukuwosurudansei500.jpg; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				9AE194C119A4404700975528 /* nanapiViewController.m */,
 				9A8AEC2019A5EA180053D4C2 /* SyndromeCell.h */,
 				9A8AEC2119A5EA180053D4C2 /* SyndromeCell.m */,
+				9A855CB019A70532000B97D1 /* ArticleCell.h */,
+				9A855CB119A70532000B97D1 /* ArticleCell.m */,
 				9A1A296F19A1DC950090E892 /* Images.xcassets */,
 				9A1A295E19A1DC950090E892 /* Supporting Files */,
 			);
@@ -336,6 +341,7 @@
 				9A8AEC2219A5EA180053D4C2 /* SyndromeCell.m in Sources */,
 				9AE194C219A4404700975528 /* nanapiViewController.m in Sources */,
 				9A1A29A619A2F1C40090E892 /* timeLineViewController.m in Sources */,
+				9A855CB219A70532000B97D1 /* ArticleCell.m in Sources */,
 				9A8AEBD119A474820053D4C2 /* ArticlesViewController.m in Sources */,
 				9A1A298E19A1DCB50090E892 /* SyndromeViewController.m in Sources */,
 				9A1A296419A1DC950090E892 /* main.m in Sources */,
