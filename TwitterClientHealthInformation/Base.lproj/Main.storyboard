@@ -131,9 +131,17 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Back" style="plain" id="Y0H-v6-BWd"/>
+                                    <barButtonItem title="Back" style="plain" id="Y0H-v6-BWd">
+                                        <connections>
+                                            <action selector="goBack" destination="OYs-bS-xh6" id="YLW-di-hde"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="CLk-0K-5qr"/>
-                                    <barButtonItem title="Item" systemItem="refresh" id="3iO-ws-KLn"/>
+                                    <barButtonItem title="Item" systemItem="refresh" id="3iO-ws-KLn">
+                                        <connections>
+                                            <action selector="reload" destination="OYs-bS-xh6" id="qXp-Am-fih"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="WmW-Ig-lWF"/>
                                     <barButtonItem systemItem="action" id="9BT-Dm-b24">
                                         <connections>
@@ -143,17 +151,11 @@
                                 </items>
                             </toolbar>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CJB-l7-WoA">
-                                <rect key="frame" x="-6" y="103" width="332" height="2"/>
+                                <rect key="frame" x="-6" y="59" width="332" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-dO-8P8">
-                                <rect key="frame" x="139" y="274" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-bS-xh6">
-                                <rect key="frame" x="0.0" y="67" width="320" height="457"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -165,7 +167,6 @@
                         <outlet property="backButtonItem" destination="Y0H-v6-BWd" id="AAR-cW-aWq"/>
                         <outlet property="progressView" destination="CJB-l7-WoA" id="YIi-ji-Sva"/>
                         <outlet property="refreshButtonitem" destination="3iO-ws-KLn" id="6pN-6g-dHf"/>
-                        <outlet property="titleLabel" destination="w0f-dO-8P8" id="THE-ru-sCO"/>
                         <outlet property="toolBar" destination="Ib0-zZ-bYC" id="7s9-rh-cse"/>
                         <outlet property="webView" destination="OYs-bS-xh6" id="KZT-Ea-fCG"/>
                     </connections>

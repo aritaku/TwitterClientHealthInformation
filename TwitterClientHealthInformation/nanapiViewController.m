@@ -65,8 +65,6 @@
 {
     self.progressView.progress = 1.0;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    // JavaScriptを用いてタイトルを取得する
-    self.titleLabel.text = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
 // UIWebViewで読み込みが失敗

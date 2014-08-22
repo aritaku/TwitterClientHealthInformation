@@ -10,7 +10,6 @@
 
 @interface nanapiViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButtonItem;

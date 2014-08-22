@@ -78,7 +78,6 @@
     UITextView *articleTitleView = (UITextView *)[cell viewWithTag:2];
     UITextView *articleDescription = (UITextView * )[cell viewWithTag:3];
     
-    //NSString *image =
     NSString *title = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"title"];
     NSString *description = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"description"];
     
