@@ -24,10 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"nanapi記事";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+        
     [self getJson];
     
 }
@@ -71,9 +72,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"articleCell" forIndexPath:indexPath];
+    
+    UIImageView *articleImageView = (UIImageView *)[cell viewWithTag:1 ];
+    UITextView *articleTitleView = (UITextView *)[cell viewWithTag:2];
+    UITextView *articleDescription = (UITextView * )[cell viewWithTag:3];
+    
+    //NSString *image =
     NSString *title = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"title"];
-    cell.textLabel.text = title;
+    NSString *description = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"description"];
+    
+    NSString *articleImagePath = [[self.nanapiList objectAtIndex:indexPath.row] objectForKey:@"image"];
+    NSURL *articleImagePathUrl = [[NSURL alloc] initWithString:articleImagePath];
+    NSData *articleImagePathData = [[NSData alloc] initWithContentsOfURL:articleImagePathUrl];
+    articleImageView.image = [[UIImage alloc] initWithData:articleImagePathData];
+    
+    articleTitleView.text = title;
+    articleDescription.text = description;
+    
     return cell;
 }
 
